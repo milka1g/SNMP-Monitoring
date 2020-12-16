@@ -1,0 +1,149 @@
+{
+    "auto_start": false,
+    "name": "SNMP_setup",
+    "project_id": "3843408c-67ba-4fb2-abcd-a142532ae71b",
+    "revision": 7,
+    "topology": {
+        "computes": [
+            {
+                "compute_id": "local",
+                "host": "127.0.0.1",
+                "name": "Local",
+                "port": 3080,
+                "protocol": "http"
+            }
+        ],
+        "drawings": [],
+        "links": [
+            {
+                "link_id": "c2166ba3-219d-4e2c-9eef-6a6ac9d2c769",
+                "nodes": [
+                    {
+                        "adapter_number": 0,
+                        "node_id": "f9db9750-f90e-4222-8a9f-4b29f8661982",
+                        "port_number": 0
+                    },
+                    {
+                        "adapter_number": 0,
+                        "node_id": "dac6e93b-f391-4523-99e4-c9931c594722",
+                        "port_number": 0
+                    }
+                ]
+            }
+        ],
+        "nodes": [
+            {
+                "compute_id": "local",
+                "console": 5000,
+                "console_type": "telnet",
+                "first_port_name": null,
+                "label": {
+                    "rotation": 0,
+                    "style": "font-family: TypeWriter;font-size: 10;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                    "text": "R1",
+                    "x": 20,
+                    "y": -25
+                },
+                "name": "R1",
+                "node_id": "f9db9750-f90e-4222-8a9f-4b29f8661982",
+                "node_type": "dynamips",
+                "port_name_format": "Ethernet{0}",
+                "port_segment_size": 0,
+                "properties": {
+                    "auto_delete_disks": true,
+                    "clock_divisor": 8,
+                    "disk0": 0,
+                    "disk1": 0,
+                    "dynamips_id": 1,
+                    "exec_area": 64,
+                    "idlemax": 500,
+                    "idlepc": "0x60a80678",
+                    "idlesleep": 30,
+                    "image": "c3745-advipservicesk9-mz.124-25d.image",
+                    "image_md5sum": "87330d400d97a5e2a5ca80c4411b878f",
+                    "iomem": 5,
+                    "mac_addr": "c401.8b94.0000",
+                    "mmap": true,
+                    "nvram": 256,
+                    "platform": "c3745",
+                    "ram": 256,
+                    "slot0": "GT96100-FE",
+                    "slot1": "NM-1FE-TX",
+                    "slot2": "NM-1FE-TX",
+                    "sparsemem": true,
+                    "startup_config": "configs/i1_startup-config.cfg",
+                    "system_id": "FTX0945W0MY"
+                },
+                "symbol": ":/symbols/router.svg",
+                "x": -179,
+                "y": -36,
+                "z": 1
+            },
+            {
+                "compute_id": "local",
+                "console": null,
+                "console_type": null,
+                "first_port_name": null,
+                "label": {
+                    "rotation": 0,
+                    "style": "font-family: TypeWriter;font-size: 10;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                    "text": "Host1",
+                    "x": 9,
+                    "y": -25
+                },
+                "name": "Host1",
+                "node_id": "dac6e93b-f391-4523-99e4-c9931c594722",
+                "node_type": "cloud",
+                "port_name_format": "Ethernet{0}",
+                "port_segment_size": 0,
+                "properties": {
+                    "interfaces": [],
+                    "ports_mapping": [
+                        {
+                            "interface": "VMware Network Adapter VMnet1",
+                            "name": "VMware Network Adapter VMnet1",
+                            "port_number": 1,
+                            "type": "ethernet"
+                        },
+                        {
+                            "interface": "Local Area Connection",
+                            "name": "Local Area Connection",
+                            "port_number": 2,
+                            "type": "ethernet"
+                        },
+                        {
+                            "interface": "Wireless Network Connection",
+                            "name": "Wireless Network Connection",
+                            "port_number": 3,
+                            "type": "ethernet"
+                        },
+                        {
+                            "interface": "VMware Network Adapter VMnet8",
+                            "name": "VMware Network Adapter VMnet8",
+                            "port_number": 4,
+                            "type": "ethernet"
+                        },
+                        {
+                            "interface": "Local Area Connection 2",
+                            "name": "Local Area Connection 2",
+                            "port_number": 5,
+                            "type": "ethernet"
+                        },
+                        {
+                            "interface": "Wireless Network Connection 2",
+                            "name": "Wireless Network Connection 2",
+                            "port_number": 6,
+                            "type": "ethernet"
+                        }
+                    ]
+                },
+                "symbol": ":/symbols/computer.svg",
+                "x": 87,
+                "y": -44,
+                "z": 1
+            }
+        ]
+    },
+    "type": "topology",
+    "version": "2.0.3"
+}
