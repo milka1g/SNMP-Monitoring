@@ -34,7 +34,6 @@ import logic.BgpPeer;
 import logic.Router;
 
 public class Gjui {
-	// KRK KAD SI GLUP RADI OVAKO PATTERN ZVANI MONGOL
 	private Instant start1, start2;
 	private JFrame frmVarijanta;
 	private JPanel ruter1, ruter2;
@@ -214,7 +213,7 @@ public class Gjui {
 		frmVarijanta.getContentPane().add(comboBox);
 		// the ActionListener.actionPerformed method on a Swing object is already
 		// invoked from the EDT.
-		// isto i za ovo sa itemima itd, moze odavde da se update gui
+		// isto i za ovo sa itemima itd, moze odavde da se update gui bezbedno
 		comboBox.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent e) {
 				if (e.getStateChange() == ItemEvent.SELECTED) {
@@ -241,7 +240,6 @@ public class Gjui {
 				ActionListener al = new ActionListener() {
 					@Override
 					public void actionPerformed(ActionEvent arg0) {
-						// System.out.println("Proslo 5sec");
 						r.initUpdate();
 						window.updateRouters();
 					}
@@ -303,8 +301,8 @@ public class Gjui {
 		long u1, u2;
 		u1 = ((SnmpCounter32) peerInUpdates1).getValue();
 		u2 = ((SnmpCounter32) peerInUpdates2).getValue();
-		//
 
+		// ruter1
 		lblImeSuseda.setText("ROUTER " + bgp1.getBgpPeerRemoteAs().toString());
 		lblIdSuseda1.setText("ID suseda: " + bgp1.getBgpPeerIdentifier().toString());
 		lblStanjeSesije1.setText("Stanje sesije: " + BgpPeer.getState((SnmpInt) bgp1.getBgpPeerState()));
@@ -312,8 +310,6 @@ public class Gjui {
 		lblIPsuseda1.setText("IP suseda:" + bgp1.getBgpPeerRemoteAddr().toString());
 		lblASsuseda1.setText("AS suseda: " + bgp1.getBgpPeerRemoteAs().toString());
 		lblKeepalive1.setText("Keepalive: " + bgp1.getBgpPeerKeepAlive().toString());
-		// lblInUpdates1.setText("Updates IN: " +
-		// bgp1.getBgpPeerInUpdates().toString());
 		lblInUpdates1.setText("Updates IN: " + u1);
 		lblOutUpdates1.setText("Updates OUT: " + bgp1.getBgpPeerOutUpdates().toString());
 
@@ -325,10 +321,9 @@ public class Gjui {
 		lblIPsuseda2.setText("IP suseda:" + bgp2.getBgpPeerRemoteAddr().toString());
 		lblASsuseda2.setText("AS suseda: " + bgp2.getBgpPeerRemoteAs().toString());
 		lblKeepalive2.setText("Keepalive: " + bgp2.getBgpPeerKeepAlive().toString());
-		// lblInUpdates2.setText("Updates IN: " +
-		// bgp2.getBgpPeerInUpdates().toString());
 		lblInUpdates2.setText("Updates IN: " + u2);
 		lblOutUpdates2.setText("Updates OUT: " + bgp2.getBgpPeerOutUpdates().toString());
+
 		lblElapsed21.setForeground(new Color(51, 51, 51));
 		lblElapsed12.setForeground(new Color(51, 51, 51));
 		lblInUpdates1.setForeground(new Color(51, 51, 51));
