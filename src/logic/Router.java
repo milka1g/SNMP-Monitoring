@@ -42,7 +42,7 @@ public class Router {
 		try {
 			session = new SnmpSession(targetRouter);
 			session.setTimeout(5000);
-			session.setRetries(0);
+			session.setRetries(50);
 			MibUtil.loadMib("mibs/BGP4-MIB");
 			bgpPeerTable = session.snmpGetTable("bgpPeerTable");
 

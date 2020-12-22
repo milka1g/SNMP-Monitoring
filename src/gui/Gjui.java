@@ -1,4 +1,4 @@
-package logic;
+package gui;
 
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -29,6 +29,9 @@ import com.ireasoning.protocol.snmp.SnmpDataType;
 import com.ireasoning.protocol.snmp.SnmpInt;
 import com.ireasoning.protocol.snmp.SnmpSession;
 import com.ireasoning.protocol.snmp.SnmpTableModel;
+
+import logic.BgpPeer;
+import logic.Router;
 
 public class Gjui {
 	// KRK KAD SI GLUP RADI OVAKO PATTERN ZVANI MONGOL
@@ -73,9 +76,6 @@ public class Gjui {
 
 	private static final int delayZ = 10000;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 
 		EventQueue.invokeLater(new Runnable() {
@@ -83,7 +83,7 @@ public class Gjui {
 				// if(EventQueue.isDispatchThread())
 				// System.out.println("DISP THR");
 				window = new Gjui();
-				window.r = new Router("192.168.10.1"); // inicijalno selektovano djubre
+				window.r = new Router("192.168.10.1"); // inicijalno selektovano
 				window.addTimers();
 				window.start1 = Instant.now();
 				window.start2 = Instant.now();
